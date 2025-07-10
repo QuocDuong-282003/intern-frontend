@@ -1,33 +1,58 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import AppProvider from './context/AppContext.jsx'; // Sửa: Import AppProvider
-import { Toaster } from 'react-hot-toast';
-import Header from './components/Header.jsx';
-import Footer from './components/Footer/Footer.jsx';
-import HomePage from './pages/HomePage.jsx';
-import FavoritesPage from './pages/FavoritesPage.jsx';
-import HistoryPage from './pages/HistoryPage.jsx';
-import CartPage from './pages/CartPage.jsx';
-import CheckoutPage from './pages/payment/CheckoutPage.jsx';
-function App() {
+import { FaFacebook, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+const Footer = () => {
   return (
-    <AppProvider>
-      <Router>
-        <Toaster position="top-right" reverseOrder={false} />
-        <Header />
-        <main>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/favorites" element={<FavoritesPage />} />
-            <Route path="/history" element={<HistoryPage />} />
-            <Route path="/cart" element={<CartPage />} />
-            <Route path="/checkout" element={<CheckoutPage />} />
-          </Routes>
-        </main>
-        <Footer />
-      </Router>
-    </AppProvider>
-  );
-}
+    <footer className="bg-dark text-white mt-auto py-4">
+      <div className="container">
+        <div className="row">
 
-export default App;
+          <div className="col-md-4 mb-3 mb-md-0">
+            <h5>AI-Edu Platform</h5>
+            <p className="text-white-50">
+              Nền tảng giáo dục tích hợp AI, mang đến trải nghiệm học tập thông minh và cá nhân hóa.
+            </p>
+          </div>
+
+
+          <div className="col-md-4 mb-3 mb-md-0">
+            <h5>Liên kết nhanh</h5>
+            <ul className="list-unstyled">
+
+              <li><Link to="/" className="text-white text-decoration-none">Trang chủ</Link></li>
+              <li><Link to="/favorites" className="text-white text-decoration-none">Yêu thích</Link></li>
+              <li><Link to="/cart" className="text-white text-decoration-none">Giỏ hàng</Link></li>
+            </ul>
+          </div>
+
+
+          <div className="col-md-4">
+            <h5>Kết nối với chúng tôi</h5>
+            <div>
+
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white me-3 fs-4">
+                <FaFacebook />
+              </a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-white me-3 fs-4">
+                <FaGithub />
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white fs-4">
+                <FaLinkedin />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="row mt-4">
+          <div className="col text-center border-top border-secondary pt-3">
+            <p className="mb-0 text-white-50">
+              © {new Date().getFullYear()} - Bản quyền bởi Quốc Dương
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
