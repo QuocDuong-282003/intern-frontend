@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaFacebook, FaGithub, FaLinkedin } from 'react-icons/fa';
-
+import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
         <footer className="bg-dark text-white mt-auto py-4">
@@ -15,9 +15,9 @@ const Footer = () => {
                     <div className="col-md-4 mb-3 mb-md-0">
                         <h5>Liên kết nhanh</h5>
                         <ul className="list-unstyled">
-                            <li><a href="/" className="text-white text-decoration-none">Trang chủ</a></li>
-                            <li><a href="/favorites" className="text-white text-decoration-none">Yêu thích</a></li>
-                            <li><a href="/cart" className="text-white text-decoration-none">Giỏ hàng</a></li>
+                            <li><Link to="/" className="text-white text-decoration-none">Trang chủ</Link></li>
+                            <li><Link to="/favorites" className="text-white text-decoration-none">Yêu thích</Link></li>
+                            <li><Link to="/cart" className="text-white text-decoration-none">Giỏ hàng</Link></li>
                         </ul>
                     </div>
                     <div className="col-md-4">
